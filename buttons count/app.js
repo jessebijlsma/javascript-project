@@ -17,6 +17,13 @@ for (let i = 0; i < buttons.length; i++) {
         }
     })
 };
+for (let i = 0; i < buttons.length; i++) {
+count.addEventListener("click", function (){
+    buttons[i].classList.remove("red")
+    buttons[i].classList.remove("yellow")
+    buttons[i].classList.add("btn")
+    console.log(count)
+})}
 
 
 // container.textContent = numbers
