@@ -1,0 +1,10 @@
+.container {
+    font-size: larger;
+    border: 1px solid black;
+}
+
+.container>div {
+    border: 1px solid black;
+    padding: 0.5rem;
+    font-weight: 500;
+}
