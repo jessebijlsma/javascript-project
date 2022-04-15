@@ -5,7 +5,6 @@ const result = document.getElementById("res")
 const container = document.getElementById("container")
 let count = document.getElementById("count")
 
-// changes color onclick
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
         if (buttons[i].classList.contains("btn")) {
@@ -16,7 +15,12 @@ for (let i = 0; i < buttons.length; i++) {
             buttons[i].classList.add("red");
 
         }
-
+        count.addEventListener("click", function () {
+            buttons[i].classList.remove("red")
+            buttons[i].classList.remove("yellow")
+            buttons[i].classList.add("btn")
+            console.log(count)
+        })  
     })
 
 };
