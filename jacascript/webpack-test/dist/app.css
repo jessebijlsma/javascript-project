@@ -1,0 +1,49 @@
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
+  \*************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dfdfc7;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #610707;
+  box-shadow: blue 0px 0px 0px 2px inset, white 10px -10px 0px -3px, #1fc11b 10px -10px, white 20px -20px 0px -3px, #ffd913 20px -20px, white 30px -30px 0px -3px, #ff9c55 30px -30px, white 40px -40px 0px -3px, #ff5555 40px -40px;
+  margin: 2rem 7rem 2rem 7rem;
+  font-size: clamp(1.31rem, 1.24rem + 0.37vw, 1.5rem);
+}
+
+ul {
+  width: 100%;
+  background-color: #d0d0ac;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: x-large;
+  color: #610707;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+/*# sourceMappingURL=app.css.map*/

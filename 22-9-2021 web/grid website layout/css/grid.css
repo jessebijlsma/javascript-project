@@ -1,0 +1,364 @@
+*{
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+
+/* scroll bar*/
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgb(253, 252, 253);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(142, 140, 140);
+}
+/* scroll bar end*/
+
+:root {
+  --background: rgba(0, 214, 170, 100);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	/* background-color: rgba(27, 26, 26,100); */
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+}
+/*nav*/
+
+header {
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 95%;
+  right: 0;
+}
+
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, .75);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) {
+.nav-toggle-label {
+    display: none;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+}
+  
+.logo {
+    grid-column: 2 / 3;
+}
+  
+nav {
+    all: unset; 
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+  
+nav ul {
+    display: flex;
+}
+  
+nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+}
+  
+nav a {
+    opacity: 1;
+    position: relative;
+}
+  
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+}
+  
+nav a:hover::before {
+    transform: scale(1,1);
+    }
+}
+    /*nav end/*
+
+   /*========content==========*/
+
+.content {
+  min-height: 200vh;
+  background-image: url(../image/unnamed.jpg); 
+  background-color: rgb(100, 82, 82);
+  background-size: cover;
+  color: #eee;
+  display: grid;
+  place-items: center;
+}
+@media only screen and (max-width: 640px) {
+.content {
+  height: 250vh;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+.content {
+  height: 300vh;
+  padding: 1rem;;
+  }
+}
+
+.para {
+  gap: 0.5rem;
+  padding: 2rem;
+  font-size: larger;
+}
+  
+.para > .article1, .article2, 
+.article3 {
+  background-color: rgba(100, 82, 82, 0.5);
+}
+.article2 {
+  grid-row: 1/2;
+  grid-column: 1/3;
+}
+
+.name {
+  color: red;
+}
+  
+.position {
+  color: blue;
+}
+
+
+.content-article-1 {
+  margin-top: 0.5rem;
+}
+
+.content-article-2 {
+  margin-top: 1rem;
+}
+  /*======content end==========*/
+
+/*-------------------grid----------------*/
+.picture {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    padding:1rem;
+    background-color: rgb(19, 18, 18);
+}
+
+.picture >div img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 240px;
+    transition: opacity .3s ease-in-out;
+}
+
+.picture >div img:hover {
+    opacity: 0.5;
+}
+.lightbox-target img:hover {
+    opacity: 1 !important;
+}
+
+a.lightbox img {
+    border: 3px solid white;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+}
+    
+.lightbox-target {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    overflow: hidden;
+}
+
+.lightbox-target img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom: 0;
+    max-height: 0%;
+    max-width: 0%;
+    border: 3px solid white;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+ }
+    /*----------exit----------*/
+a.lightbox-close {
+    display: block;
+    width:50px;
+    height:50px;
+    box-sizing: border-box;
+    background: white;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+    
+a.lightbox-close:before {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 2px;
+    background: black;
+    position: absolute;
+    left: 26px;
+    top:10px;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+    
+a.lightbox-close:after {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 2px;
+    background: black;
+    position: absolute;
+    left: 26px;
+    top:10px;
+    -webkit-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+    /*-------------exit end---------------*/
+.lightbox-target:target {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+}
+    
+.lightbox-target:target img {
+    max-height: 600px;
+    max-width: 600px;
+
+}
+    
+.lightbox-target:target a.lightbox-close {
+    top: 0;
+    left: 0;
+}
+    

@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: $main-background-color;
+}
+
+p {
+    @include flexcenter();
+    color: $main-text-color;
+    box-shadow: $boxshadow;
+    margin: 2rem 7rem 2rem 7rem;
+    font-size: $--step-0;
+}
+
+ul {
+    width: 100%;
+    background-color: scale-color($main-background-color, $lightness: -10%,);
+    display:flex;
+    justify-content: space-evenly;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: x-large;
+    color: $main-text-color;
+}
+
+article {
+    @include flexcenter;
+    flex-direction: column;
+    padding-top: 2rem;
+}

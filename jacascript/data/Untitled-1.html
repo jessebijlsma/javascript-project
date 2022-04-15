@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Untitled-2.css">
+</head>
+<body>
+    <form action="" class="ice-cream">
+        <label for="favorite-icecream">What is your favourite ice cream?</label>
+        <input placeholder="chocolate" type="text" id="favorite-icecream" list="icecream-list">
+      
+        <datalist id="icecream-list">
+          <option value="chocolate"></option>
+          <option value="vanilla"></option>
+          <option value="french vanilla"></option>
+          <option value="strawberry"></option>
+          <option value="chocolate chip"></option>
+          <option value="strawberry"></option>
+          <option value="mint chocolate chip"></option>
+          <option value="cookie dough"></option>
+        </datalist>
+      
+        <label for="chocolate-preference">On a scale of 1 - 100, how much do you like chocolate ice cream?</label>
+        <input id="chocolate-preference" type="range" min="0" max="100" list="preference-scale">
+      
+        <!--   <label for="vanilla-preference">On a scale of 1 - 100, how much do you like vanilla ice cream?</label>
+        <input id="vanilla-preference" type="range" min="0" max="100" list="preference-scale">
+       -->
+      
+        <datalist id="preference-scale">
+          <option value="0">0</option>
+          <option value="10"></option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+          <option value="50">50</option>
+          <option value="60">60</option>
+          <option value="70">70</option>
+          <option value="80">80</option>
+          <option value="90">90</option>
+          <option value="100">100</option>
+        </datalist>
+      
+        <label for="pick-a-day">When would you like to eat some ice cream?</label>
+        <input type="date" id="pick-a-day" list="dates">
+      
+        <datalist id="dates">
+
+
+        </datalist>
+      
+      </form>
+</body>
+</html>

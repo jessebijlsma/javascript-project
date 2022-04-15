@@ -1,0 +1,78 @@
+:root {
+    --step--2: clamp(0.96rem, calc(0.89rem + 0.10vw), 0.91rem);
+    --step--1: clamp(1.20rem, calc(1.05rem + 0.21vw), 1.09rem);
+    --step-0: clamp(1.88rem, calc(1.19rem + 2.27vw), 2.81rem);
+    --step-1: clamp(1.58rem, calc(1.46rem + 0.59vw), 1.88rem);
+    --step-2: clamp(1.89rem, calc(1.71rem + 0.89vw), 2.34rem);
+    --step-3: clamp(3.24rem, calc(1.60rem + 5.46vw), 5.49rem);
+    --step-4: clamp(2.72rem, calc(2.36rem + 1.83vw), 3.66rem);
+    --step-5: clamp(4.67rem, calc(1.82rem + 9.50vw), 8.58rem);
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(73, 78, 77, 0.521);
+}
+
+#container {
+    padding: 0.5rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+}
+
+.btn {
+    background-color: rgb(91, 91, 105);
+    min-width: 200px;
+    min-height: 130px;
+    border: 5px solid black;
+    font-size: var(--step-3);
+}
+
+.btn:hover {
+    background-color: rgb(120, 120, 139);
+    transition: ease-in 100ms;
+}
+
+@media only screen and (max-width: 1080px) {
+    .btn {
+        min-width: 150px;
+        min-height: 125px;
+        }
+    } 
+    @media only screen and (max-width: 830px) {
+        .btn {
+            min-width: 100px;
+            }
+        } 
+        @media only screen and (max-width: 580px) {
+            .btn {
+                min-width: 75px;
+                min-height: 110px;
+                }
+            } 
+
+#res {
+    min-height: 165px;
+    display: grid;
+    place-content: center;
+}
+
+#count {
+    font-size: var(--step-4);
+    background-color: rgb(26, 25, 25);
+    min-height: 100px;
+    width: 300px;
+    color: white;
+    border: 4px solid black;
+}
+
+#count:hover {
+    background-color: rgb(49, 47, 47);
+    transition: ease-in 100ms;
+}

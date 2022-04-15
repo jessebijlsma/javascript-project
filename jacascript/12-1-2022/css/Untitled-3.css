@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul {
+    display: flex;
+    background-color: rgb(81, 69, 69);
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+li {
+    list-style: none;
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(213, 192, 169);
+    font-size: x-large;
+    padding: 1rem;
+}
+a:hover{
+    background-color: rgb(138, 129, 120);
+    transition: 500ms;
+}
+
+article {
+    background-color: rgb(77, 77, 108);
+    padding: 2rem;
+    margin: 2rem;
+}
+ /* slider script*/
+body[data-theme="light"] {
+    transition: 500ms;
+    background-color: rgb(191, 184, 159);
+    z-index: -9999;
+}
+body[data-theme="dark"] {
+    transition: 500ms;
+    background-color: rgb(41, 34, 30);
+    z-index: -9999;
+}
+.theme-switcher {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+input {
+    width: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
+}
+label {
+    cursor: pointer;
+    display: block;
+    text-indent: -9999px;
+    height: 30px;
+    width: 60px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.5s ease background-color;
+}
+label::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: rgb(46, 42, 68);
+    transition: 0.5s ease;
+}
+input:checked + label::after {
+    left: calc(100% - 25px);
+    background-color: aliceblue;
+}
+input:checked + label {
+    background-color: rgb(25, 26, 37);
+    border: 2px solid whitesmoke;
+}
+
+/* slider script end */
